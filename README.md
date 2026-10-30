@@ -38,6 +38,7 @@ python3 -m http.server 8000
 ```
 브라우저에서 http://localhost:8000
 
-## 배포 (Cloudflare Pages)
-Workers & Pages → Create → Pages → Connect to Git → 이 레포 선택.
-Framework preset `None`, 빌드 명령 비움, 출력 디렉터리 `/`. 이후 `main`에 푸시하면 자동 배포된다.
+## 배포 (Cloudflare)
+`main`에 푸시하면 자동 배포된다. 두 방식 모두 된다.
+- **Pages**: Framework preset `None`, 빌드 명령 비움, 출력 디렉터리 `/`.
+- **Workers** (Git 연결): `wrangler.jsonc`를 그대로 쓴다. 빌드 명령 비움, 배포 명령 `npx wrangler deploy`. 올리지 않을 파일은 `.assetsignore`.
